@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 st.title("🎨 Reconocedor de Personajes Anime")
-st.markdown("**Arrastra una imagen o haz clic para subirla** · 16 personajes de diferentes animes · Accuracy ~96%")
+st.markdown("**Arrastra una imagen o haz clic para subirla** · 17 personajes de diferentes animes · Accuracy ~96%")
 
 # ==================== LISTA DE PERSONAJES ====================
 # ¡¡¡ CAMBIA ESTA LISTA POR TUS 16 PERSONAJES REALES !!!
@@ -36,7 +36,7 @@ class_names = load_class_names()
 @st.cache_resource(show_spinner="Cargando el modelo desde GitHub...")
 def load_model():
     # URL de tus pesos (cámbiala cuando lo subas)
-    model_url = "https://raw.githubusercontent.com/kuroko433/anime_recognition/main/models/anime_classifier_16chars.pth"
+    model_url = "https://raw.githubusercontent.com/kuroko433/anime_recognition/main/models/anime_classifier_17chars.pth"
     
     # Descargar pesos
     state_dict = torch.hub.load_state_dict_from_url(model_url, map_location="cpu")
@@ -49,7 +49,7 @@ def load_model():
     
     # Reemplazar classifier por uno SIN Dropout, solo Linear directo (como hiciste tú)
     model.classifier = torch.nn.Sequential(
-        torch.nn.Linear(in_features, 16)  # Directo: 1280 → 16 clases
+        torch.nn.Linear(in_features, 17)  # Directo: 1280 → 17 clases
     )
     
     # Cargar tus pesos (ahora las claves coinciden perfectamente)
