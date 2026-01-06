@@ -36,7 +36,7 @@ class_names = load_class_names()
 @st.cache_resource(show_spinner="Cargando el modelo desde GitHub...")
 def load_model():
     # URL de tus pesos (cámbiala cuando lo subas)
-    model_url = "https://raw.githubusercontent.com/kuroko433/anime_recognition/main/models/anime_classifier_17chars.pth"
+    model_url = "https://raw.githubusercontent.com/kuroko433/anime_recognition/main/models/anime_classifier_19chars.pth"
     
     # Descargar pesos
     state_dict = torch.hub.load_state_dict_from_url(model_url, map_location="cpu")
