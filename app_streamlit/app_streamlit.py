@@ -16,7 +16,7 @@ st.title("🎨 Reconocedor de Personajes Anime")
 st.markdown("**Arrastra una imagen o haz clic para subirla** · 17 personajes de diferentes animes · Accuracy ~96%")
 
 # ==================== LISTA DE PERSONAJES ====================
-# ¡¡¡ CAMBIA ESTA LISTA POR TUS 16 PERSONAJES REALES !!!
+# ¡¡¡ CAMBIA ESTA LISTA POR TUS 19 PERSONAJES REALES !!!
 @st.cache_data
 def load_class_names():
     url_clases = "https://raw.githubusercontent.com/kuroko433/anime_recognition/main/classes/clases_2.csv"
@@ -49,7 +49,7 @@ def load_model():
     
     # Reemplazar classifier por uno SIN Dropout, solo Linear directo (como hiciste tú)
     model.classifier = torch.nn.Sequential(
-        torch.nn.Linear(in_features, 17)  # Directo: 1280 → 17 clases
+        torch.nn.Linear(in_features, 19)  # Directo: 1280 → 17 clases
     )
     
     # Cargar tus pesos (ahora las claves coinciden perfectamente)
